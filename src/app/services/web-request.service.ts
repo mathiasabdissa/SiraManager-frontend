@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class WebRequestService {
   readonly ROOT_URL;
   constructor(private http: HttpClient) {
-    this.ROOT_URL = 'https://siramanager-api.herokuapp.com';
+    this.ROOT_URL = 'http://localhost:8000';
   }
 
   get(uri: string) {
@@ -24,5 +24,22 @@ export class WebRequestService {
 
   delete(uri: string) {
     return this.http.delete(`${this.ROOT_URL}/${uri}`);
+  }
+  login(email: string, password: string) {
+    return this.http.post(`${this.ROOT_URL}/users/login`, {
+      email,
+      password
+    }, {
+        observe: 'response'
+      });
+  }
+
+  signup(email: string, password: string) {
+    return this.http.post(`${this.ROOT_URL}/users`, {
+      email,
+      password
+    }, {
+        observe: 'response'
+      });
   }
 }
