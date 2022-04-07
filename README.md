@@ -12,6 +12,11 @@ Install SiraManager-frontend with npm
   npm install 
   ng serve -o
 ```
+```bash
+  cd SiraManager-frontend
+  npm install 
+  ng serve -o
+```
 
 ## Live Server ✈️
 
