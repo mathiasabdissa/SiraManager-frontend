@@ -15,7 +15,7 @@ Install SiraManager-frontend with npm
 
 ## Live Server ✈️
 Here is the live deployed site
-[SiraManager](https://siramanager-api.herokuapp.com/)
+[SiraManager](https://siramanager-frontend.herokuapp.com)
 
 ## API Documentation 
 I use postman for the API Documentation
