@@ -2,15 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WebRequestService {
   readonly ROOT_URL;
   constructor(private http: HttpClient) {
     // Production
     this.ROOT_URL = 'https://siramanager-api.herokuapp.com';
-    // Local 
-   // this.ROOT_URL = 'http://localhost:8000';
+    // Local
+    // this.ROOT_URL = 'http://localhost:8000';
   }
 
   get(uri: string) {
@@ -29,20 +29,28 @@ export class WebRequestService {
     return this.http.delete(`${this.ROOT_URL}/${uri}`);
   }
   login(email: string, password: string) {
-    return this.http.post(`${this.ROOT_URL}/users/login`, {
-      email,
-      password
-    }, {
-        observe: 'response'
-      });
+    return this.http.post(
+      `${this.ROOT_URL}/users/login`,
+      {
+        email,
+        password,
+      },
+      {
+        observe: 'response',
+      }
+    );
   }
 
   signup(email: string, password: string) {
-    return this.http.post(`${this.ROOT_URL}/users`, {
-      email,
-      password
-    }, {
-        observe: 'response'
-      });
+    return this.http.post(
+      `${this.ROOT_URL}/users`,
+      {
+        email,
+        password,
+      },
+      {
+        observe: 'response',
+      }
+    );
   }
 }
