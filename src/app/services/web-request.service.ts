@@ -8,9 +8,9 @@ export class WebRequestService {
   readonly ROOT_URL;
   constructor(private http: HttpClient) {
     // Production
-    this.ROOT_URL = 'https://siramanager-api.herokuapp.com';
+    //this.ROOT_URL = 'https://siramanager-api.herokuapp.com';
     // Local
-    // this.ROOT_URL = 'http://localhost:8000';
+    this.ROOT_URL = 'http://localhost:8000';
   }
 
   get(uri: string) {
